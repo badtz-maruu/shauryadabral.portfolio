@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+<body>
+  <header class="header" role="banner">
+    
+    <!-- HERO -->
+    <div id="home" class="profile" aria-label="Hero">
+      <figure class="avatar">
+        <!-- Keep this path; replace file if needed -->
+        <img src="assets/images/profile.jpg" alt="Profile photo" width="180" height="180" class="profile-pic"/>
+      </figure>
+
+      <!-- Portfolium Meum around profile -->
+    <h1 class="portfolio-text">
+      <span class="port">Portfolium</span>
+      <span class="meum">meum</span>
+    </h1>
+
+    <!-- Big name with gradient text -->
+    <h2 class="headline">SHAURYA DABRAL</h2>
+    <p class="tagline">Aspiring Developer · Designer · Creator</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </div>
+
+  <!-- NAV BELOW HERO -->
+  <nav class="nav" aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+    <section id="about" class="section">
+      <h3>My Saga</h3>
+      <p>Chase your stars fool, life is short</p>
+    </section>
+
+    <section id="projects" class="section">
+      <h3>Projects</h3>
+
+      <div class="grid">
+        <!-- PROJECT 1 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <!-- TODO: replace with your image path -->
+            <img class="project-thumb" src="assets/images/project1.jpeg" alt="Project 1 thumbnail">
+          </div>
+          <h4>Project 1</h4>
+          <p>Short description of your project.</p>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <!-- TODO: replace with your image path -->
+            <img class="project-thumb" src="assets/images/project2.jpg" alt="Project 2 thumbnail">
+          </div>
+          <h4>Project 2</h4>
+          <p>Short description of your project.</p>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="card">
+          <div class="thumb-wrap">
+            <!-- TODO: replace with your image path -->
+            <img class="project-thumb" src="assets/images/project3.jpeg" alt="Project 3 thumbnail">
+          </div>
+          <h4>Project 3</h4>
+          <p>Short description of your project.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>GitHub: <a href="#" target="_blank" rel="noopener">your-handle</a></p>
+      <p>LinkedIn: <a href="#" target="_blank" rel="noopener">www.linkedin.com/in/shaurya-dabral218</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Your Name</p>
+  </footer>
+
+  <script>
+    // Helpful logging if any image fails
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        console.error('Failed to load image:', img.getAttribute('src'));
+      });
+    });
+      
+
+  // 3. Fade-in animation for project cards when in view
+  const cards = document.querySelectorAll(".card");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+  
+  </script>
+  <div class="social-links">
+  <a href="https://github.com/your-handle" target="_blank">
+    <img src="assets/icons/github.svg" alt="GitHub" width="20"/> GitHub
+  </a>
+  <a href="www.linkedin.com/in/shaurya-dabral" target="_blank">
+    <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="20"/> LinkedIn
+  </a>
+</div>
+</body>
+</html>
